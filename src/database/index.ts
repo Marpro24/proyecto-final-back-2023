@@ -1,11 +1,18 @@
+import "dotenv/config";
+import chalk from "chalk";
+import debugCreator from "debug";
 import mongoose from "mongoose";
 
-export const connectToDatabase = async (mongoUrl: string) => {
+const debug = debugCreator("src:final-project:database:index");
+
+const connectToDatabase = async (mongoUrl: string) => {
   try {
     await mongoose.connect(mongoUrl);
-    mongoose.set("debug", true);
-    // Mensaje para cuando se ha conectado 🐼
-  } catch (error) {
-    // Mensaje para cuando no se ha conectado 🐇
+    mongoose.set("debug", false);
+    debug(chalk.greenBright("Connected to database"));
+  } catch {
+    debug(chalk.redBright("Not able to connect to database"));
   }
 };
+
+export default connectToDatabase;
