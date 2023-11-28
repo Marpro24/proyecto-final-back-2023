@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../../../server/app";
 import "../../../setupTest";
 
-describe("Given a get method with a / endpoint", () => {
+describe("Given a get method with a '/' endpoint", () => {
   describe("When it receives a request", () => {
     test("Then it should respond with a '🏓' message", async () => {
       const expectedMessage = "🏓";
