@@ -59,7 +59,7 @@ describe("Given a generalError method", () => {
         );
 
         const errorResponseBody = {
-          message: errorMessage,
+          error: errorMessage,
         };
 
         expect(res.json).toHaveBeenCalledWith(

@@ -20,10 +20,8 @@ const generalError = (
   _next: NextFunction,
 ) => {
   const statusCode = error.statusCode ?? 500;
-  const privateMessage = error.customMessage ?? error.message;
-  debug(chalk.redBright("Error:", privateMessage));
 
-  res.status(statusCode).json({ message: privateMessage });
+  res.status(statusCode).json({ error: error.message });
 };
 
 export default generalError;
