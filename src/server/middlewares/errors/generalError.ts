@@ -2,7 +2,7 @@ import { type NextFunction, type Request, type Response } from "express";
 import "dotenv/config";
 import debugCreator from "debug";
 import chalk from "chalk";
-import CustomError from "../../CustomError/CustomError";
+import CustomError from "../../CustomError/CustomError.js";
 
 const debug = debugCreator("src:final-project:server:middlewares:errors");
 
