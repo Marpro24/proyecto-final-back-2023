@@ -6,7 +6,7 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a generalError method", () => {
+describe("Given a generalError function", () => {
   const req = {};
   const res: Pick<Response, "json" | "status"> = {
     status: jest.fn().mockReturnThis(),
@@ -17,8 +17,8 @@ describe("Given a generalError method", () => {
   describe("When it receives a response and an error with a status code", () => {
     test("Then it should call the response's method with a 404", () => {
       const errorMessage = "Endpoint not found";
-      const expectedSatusCode = 404;
-      const error = new CustomError(errorMessage, expectedSatusCode);
+      const expectedStatusCode = 404;
+      const error = new CustomError(errorMessage, expectedStatusCode);
 
       generalError(
         error,
@@ -27,12 +27,12 @@ describe("Given a generalError method", () => {
         next as NextFunction,
       );
 
-      expect(res.status).toHaveBeenCalledWith(expectedSatusCode);
+      expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
     describe("When it receives an error without a status code and a response", () => {
       test("Then it should call the status method of the response with a 500", () => {
         const expectedError = new Error("Error without a status code");
-        const expectedSatusCode = 500;
+        const expectedStatusCode = 500;
 
         generalError(
           expectedError as CustomError,
@@ -41,15 +41,15 @@ describe("Given a generalError method", () => {
           next as NextFunction,
         );
 
-        expect(res.status).toHaveBeenCalledWith(expectedSatusCode);
+        expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
       });
     });
 
     describe("When it receives a response with an error message", () => {
       test("Then it should call the json methid of the response with a 'General Error'", () => {
-        const expectedSatusCode = 400;
+        const expectedStatusCode = 400;
         const errorMessage = "general error";
-        const error = new CustomError(errorMessage, expectedSatusCode);
+        const error = new CustomError(errorMessage, expectedStatusCode);
 
         generalError(
           error,
@@ -62,9 +62,7 @@ describe("Given a generalError method", () => {
           error: errorMessage,
         };
 
-        expect(res.json).toHaveBeenCalledWith(
-          expect.objectContaining(errorResponseBody),
-        );
+        expect(res.json).toHaveBeenCalledWith(errorResponseBody);
       });
     });
   });

@@ -1,5 +1,5 @@
 import request from "supertest";
-import paintingsMock from "../../mocks/paintingsMock";
+import paintingsMock from "../mocks/paintingsMock";
 import Painting from "../model/Painting";
 import { type PaintingStructure } from "../types";
 import app from "../../../server/app";

@@ -15,5 +15,6 @@ app.use(express.json());
 
 app.use("/", pingRouter);
 app.use("/paintings", paintingsRouter);
+
 app.use(notFound);
 app.use(generalError);
