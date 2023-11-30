@@ -1,4 +1,4 @@
-import { type PaintingStructure } from "../paintings/types";
+import { type PaintingStructure } from "../types";
 
 const paintingsMock: PaintingStructure[] = [
   {
