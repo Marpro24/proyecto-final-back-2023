@@ -1,5 +1,5 @@
 import { type Request, type Response } from "express";
-import paintingsMock from "../../mocks/paintingsMock";
+import paintingsMock from "../mocks/paintingsMock";
 import { type PaintingsRepository } from "../repository/types";
 import PaintingsController from "./PaintingsController";
 
@@ -19,14 +19,14 @@ describe("Given a PaintingsController's getPaintings method", () => {
 
   describe("When it receives a response", () => {
     test("Then it should call its method status with the status code 200", async () => {
-      const expectedSatusCode = 200;
+      const expectedStatusCode = 200;
 
       const paintingsController = new PaintingsController(
         paintingsRepository as PaintingsRepository,
       );
       await paintingsController.getPaintings(req as Request, res as Response);
 
-      expect(res.status).toHaveBeenCalledWith(expectedSatusCode);
+      expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
     test("Then it should call its method json with Boys who swim, Untitled, Stuck on you, Barticaborn", async () => {
