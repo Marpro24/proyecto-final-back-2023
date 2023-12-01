@@ -1,0 +1,34 @@
+{
+  "info": {
+    "_postman_id": "9746464d-f97e-4af2-90a3-eaf747bdf9a5",
+    "name": "paintings",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31537640"
+  },
+  "item": [
+    {
+      "name": "list",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "ping",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "endpoint not found",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
