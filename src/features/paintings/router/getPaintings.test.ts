@@ -4,7 +4,7 @@ import Painting from "../model/Painting";
 import { type PaintingStructure } from "../types";
 import app from "../../../server/app";
 import "../../../server/index";
-import "../../../setupTest";
+import "../../../setupTests";
 
 describe("Given a GET/paintings endpoint", () => {
   describe("When it recives a valid reuest", () => {
