@@ -12,4 +12,6 @@ const paintingsController = new PaintingsController(paintingsRepository);
 
 paintingsRouter.get("/", paintingsController.getPaintings);
 
+paintingsRouter.delete("/:paintingId", paintingsController.deletePainting);
+
 export default paintingsRouter;
