@@ -6,10 +6,14 @@ import generalError, { notFound } from "./middlewares/errors/generalError.js";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import paintingsRouter from "../features/paintings/router/paintingsRouter.js";
 
-const corsPort = process.env.ALLOWED_ORIGIN;
-const corsOptions = { origin: corsPort };
+const allowedOrigins = [
+  process.env.ALLOWED_ORIGIN!,
+  process.env.ALLOWED_ORIGIN_PROD!,
+];
 
-app.use(cors(corsOptions));
+const options: cors.CorsOptions = { origin: allowedOrigins };
+
+app.use(cors(options));
 app.use(morgan("dev"));
 app.use(express.json());
 
