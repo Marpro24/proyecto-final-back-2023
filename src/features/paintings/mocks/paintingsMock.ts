@@ -49,6 +49,16 @@ const paintingsMock: PaintingStructure[] = [
     title: "Barticaborn",
     year: 1967,
   },
+  {
+    _id: "6564d129ab6e912be5400b1f",
+    authorInfo: "",
+    image: "",
+    imageDescription: "",
+    name: "",
+    price: 0,
+    title: "",
+    year: 0,
+  },
 ];
 
 export default paintingsMock;
