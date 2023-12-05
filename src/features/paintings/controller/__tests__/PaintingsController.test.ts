@@ -1,7 +1,7 @@
 import { type Request, type Response } from "express";
-import paintingsMock from "../mocks/paintingsMock";
-import { type PaintingsRepository } from "../repository/types";
-import PaintingsController from "./PaintingsController";
+import paintingsMock from "../../mocks/paintingsMock";
+import { type PaintingsRepository } from "../../repository/types";
+import PaintingsController from "../PaintingsController";
 
 beforeEach(() => {
   jest.clearAllMocks();
