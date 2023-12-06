@@ -15,7 +15,7 @@ describe("Given a PaintinsController deletePaintings method", () => {
   };
   const res: Pick<Response, "status" | "json"> = {
     status: jest.fn().mockReturnThis(),
-    json: jest.fn().mockResolvedValue({}),
+    json: jest.fn(),
   };
   const next: NextFunction = jest.fn();
 
