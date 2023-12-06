@@ -14,4 +14,6 @@ paintingsRouter.get("/", paintingsController.getPaintings);
 
 paintingsRouter.delete("/:paintingId", paintingsController.deletePainting);
 
+paintingsRouter.post("/create");
+
 export default paintingsRouter;
