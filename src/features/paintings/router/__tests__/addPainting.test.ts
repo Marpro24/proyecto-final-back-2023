@@ -5,8 +5,8 @@ import "../../../../server/index";
 import { type PaintingStructure } from "../../types";
 import { server } from "../../../../setupTests";
 
-describe("Given a POST/ paintings/create endpoint", () => {
-  const path = "/paintings/create";
+describe("Given a POST/ paintings/add endpoint", () => {
+  const path = "/paintings/add";
 
   describe("When it receives a request with a new Frank Bowling painting", () => {
     test("Then it should respond with a status code 201 and the new Frank Bowling painting", async () => {
