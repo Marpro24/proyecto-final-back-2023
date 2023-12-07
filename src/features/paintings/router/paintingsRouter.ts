@@ -16,7 +16,7 @@ paintingsRouter.get("/", paintingsController.getPaintings);
 paintingsRouter.delete("/:paintingId", paintingsController.deletePainting);
 
 paintingsRouter.post(
-  "/create",
+  "/add",
   paintingValidation,
   paintingsController.addPainting,
 );
