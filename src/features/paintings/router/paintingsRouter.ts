@@ -2,6 +2,7 @@ import { Router } from "express";
 import PaintingsController from "../controller/PaintingsController.js";
 import PaintingsMongooseRepository from "../repository/PaintingsMongooseRepository.js";
 import { type PaintingsRepository } from "../repository/types";
+import paintingValidation from "../schema/paintingSchema.js";
 
 const paintingsRouter = Router();
 
@@ -14,6 +15,10 @@ paintingsRouter.get("/", paintingsController.getPaintings);
 
 paintingsRouter.delete("/:paintingId", paintingsController.deletePainting);
 
-paintingsRouter.post("/create");
+paintingsRouter.post(
+  "/create",
+  paintingValidation,
+  paintingsController.addPainting,
+);
 
 export default paintingsRouter;
