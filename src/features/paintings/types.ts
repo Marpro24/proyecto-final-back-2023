@@ -11,15 +11,7 @@ export interface PaintingStructure {
   year: number;
 }
 
-export interface PaintingStructureWithoutId {
-  authorInfo: string;
-  image: string;
-  imageDescription: string;
-  name: string;
-  price: number;
-  title: string;
-  year: number;
-}
+export type PaintingStructureWithoutId = Omit<PaintingStructure, "_id">;
 
 export type PaintingRequestWithoutId = Request<
   Record<string, unknown>,
