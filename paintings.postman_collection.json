@@ -10,7 +10,14 @@
       "name": "list",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/paintings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["paintings"]
+        }
       },
       "response": []
     },
@@ -27,6 +34,21 @@
       "request": {
         "method": "GET",
         "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "delete item",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/paintings/6564d129ab6e912be5400b1f",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["paintings", "6564d129ab6e912be5400b1f"]
+        }
       },
       "response": []
     }

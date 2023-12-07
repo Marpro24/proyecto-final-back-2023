@@ -1,5 +1,8 @@
 import Painting from "../model/Painting.js";
-import { type PaintingStructure } from "../types";
+import {
+  type PaintingStructureWithoutId,
+  type PaintingStructure,
+} from "../types";
 import { type PaintingsRepository } from "./types";
 
 class PaintingsMongooseRepository implements PaintingsRepository {
@@ -15,6 +18,20 @@ class PaintingsMongooseRepository implements PaintingsRepository {
     } catch (error) {
       throw new Error(
         "Error deleting this painting" + (error as Error).message,
+      );
+    }
+  }
+
+  async addPainting(
+    painting: PaintingStructureWithoutId,
+  ): Promise<PaintingStructure> {
+    try {
+      const newPainting = await Painting.create(painting);
+
+      return newPainting;
+    } catch (error) {
+      throw new Error(
+        "An error occurred, please try again" + (error as Error).message,
       );
     }
   }

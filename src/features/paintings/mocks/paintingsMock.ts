@@ -51,13 +51,15 @@ const paintingsMock: PaintingStructure[] = [
   },
   {
     _id: "6564d129ab6e912be5400b1f",
-    authorInfo: "",
-    image: "",
-    imageDescription: "",
-    name: "",
-    price: 0,
-    title: "",
-    year: 0,
+    authorInfo:
+      "Jean-Michel Basquiat is considered to be one of the most influential African-American artists of the late twentieth century.",
+    image: "https://i.ibb.co/VmNHd2K/sugar-ray-robinson-1.webp basquiat",
+    imageDescription:
+      "Sugar Ray Robinson is one of the true icons from the sport of boxing and can be considered one of the heroes of a young Jean-Michel Basquiat. The artist respected most prominent African-Americans within the fields of sport and music and in this example chose to produce a Neo-Expressionist portrait of him.",
+    name: "Jean-Michel Basquiat",
+    price: 10000000,
+    title: "Sugar Ray Robinson",
+    year: 1982,
   },
 ];
 

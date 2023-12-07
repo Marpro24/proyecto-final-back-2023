@@ -1,10 +1,10 @@
 import request from "supertest";
-import paintingsMock from "../mocks/paintingsMock";
-import Painting from "../model/Painting";
-import { type PaintingStructure } from "../types";
-import app from "../../../server/app";
-import "../../../server/index";
-import "../../../setupTests";
+import paintingsMock from "../../mocks/paintingsMock";
+import Painting from "../../model/Painting";
+import { type PaintingStructure } from "../../types";
+import app from "../../../../server/app";
+import "../../../../server/index";
+import "../../../../setupTests";
 
 describe("Given a GET/paintings endpoint", () => {
   describe("When it recives a valid reuest", () => {

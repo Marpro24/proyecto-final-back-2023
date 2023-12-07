@@ -1,3 +1,5 @@
+import { type Request } from "express";
+
 export interface PaintingStructure {
   _id: string;
   authorInfo: string;
@@ -8,3 +10,11 @@ export interface PaintingStructure {
   title: string;
   year: number;
 }
+
+export type PaintingStructureWithoutId = Omit<PaintingStructure, "_id">;
+
+export type PaintingRequestWithoutId = Request<
+  Record<string, unknown>,
+  Record<string, unknown>,
+  PaintingStructureWithoutId
+>;
