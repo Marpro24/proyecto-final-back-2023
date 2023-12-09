@@ -49,6 +49,28 @@ class PaintingsController {
       next(customError);
     }
   };
+
+  getPaintingById = async (
+    req: Request<{ paintingId: string }>,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const { paintingId } = req.params;
+
+      const painting =
+        await this.paintingsRepository.getPaintingById(paintingId);
+
+      res.status(200).json(painting);
+    } catch {
+      const customError = new CustomError(
+        "An error occurred, please try again",
+        400,
+      );
+
+      next(customError);
+    }
+  };
 }
 
 export default PaintingsController;

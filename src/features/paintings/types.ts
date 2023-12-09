@@ -18,3 +18,5 @@ export type PaintingRequestWithoutId = Request<
   Record<string, unknown>,
   PaintingStructureWithoutId
 >;
+
+export type PaintingRequestById = Request<{ paintingId: string }>;
