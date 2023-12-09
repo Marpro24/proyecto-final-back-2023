@@ -35,6 +35,17 @@ class PaintingsMongooseRepository implements PaintingsRepository {
       );
     }
   }
+
+  async getPaintingById(id: string): Promise<PaintingStructure> {
+    try {
+      const painting = await Painting.findById(id);
+      return painting!;
+    } catch (error) {
+      throw new Error(
+        "An error occurred, please try again" + (error as Error).message,
+      );
+    }
+  }
 }
 
 export default PaintingsMongooseRepository;

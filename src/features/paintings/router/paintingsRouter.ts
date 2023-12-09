@@ -12,13 +12,12 @@ const paintingsRepository: PaintingsRepository =
 const paintingsController = new PaintingsController(paintingsRepository);
 
 paintingsRouter.get("/", paintingsController.getPaintings);
-
 paintingsRouter.delete("/:paintingId", paintingsController.deletePainting);
-
 paintingsRouter.post(
   "/add",
   paintingValidation,
   paintingsController.addPainting,
 );
+paintingsRouter.get("/:paintingId", paintingsController.getPaintingById);
 
 export default paintingsRouter;
