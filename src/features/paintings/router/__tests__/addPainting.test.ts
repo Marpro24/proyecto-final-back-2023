@@ -25,7 +25,7 @@ describe("Given a POST/ paintings/add endpoint", () => {
   });
 
   describe("When it receives an invalid request", () => {
-    test("Then it should respond with the status code 404 and the error messge 'An error occurred, please try again'", async () => {
+    test("Then it should respond with the status code 400 and the error messge 'An error occurred, please try again'", async () => {
       await server.stop();
 
       const expectedStatusCode = 400;
