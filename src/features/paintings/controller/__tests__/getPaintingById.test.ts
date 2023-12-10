@@ -43,13 +43,15 @@ describe("Given a PaintingsController getPaintingById method", () => {
     });
 
     test("Then it should call it json method with the painting Boys who swim", async () => {
+      const painting = paintingsMock;
+
       await paintingsController.getPaintingById(
         req as PaintingRequestById,
         res as Response,
         next,
       );
 
-      expect(res.json).toHaveBeenCalledWith(paintingsMock);
+      expect(res.json).toHaveBeenCalledWith({ painting });
     });
   });
 });

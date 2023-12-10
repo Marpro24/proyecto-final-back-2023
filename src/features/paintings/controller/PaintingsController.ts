@@ -61,7 +61,7 @@ class PaintingsController {
       const painting =
         await this.paintingsRepository.getPaintingById(paintingId);
 
-      res.status(200).json(painting);
+      res.status(200).json({ painting });
     } catch {
       const customError = new CustomError(
         "An error occurred, please try again",
