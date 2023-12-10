@@ -18,7 +18,7 @@ describe("Given a GET method with a /paintings/:paintingId endpoint", () => {
 
       const responseBody = response.body as { painting: PaintingStructure };
 
-      expect(responseBody).toHaveProperty("title", expectedPainting);
+      expect(responseBody.painting).toHaveProperty("title", expectedPainting);
     });
   });
 
