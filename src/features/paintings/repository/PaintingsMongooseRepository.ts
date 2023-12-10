@@ -46,6 +46,25 @@ class PaintingsMongooseRepository implements PaintingsRepository {
       );
     }
   }
+
+  public async modifyPainting(
+    id: string,
+    painting: PaintingStructure,
+  ): Promise<PaintingStructure | undefined> {
+    try {
+      const modifiedPainting = await Painting.findByIdAndUpdate(
+        id,
+        { ...painting },
+        { returnDocument: "after" },
+      );
+
+      return modifiedPainting!;
+    } catch (error) {
+      throw new Error(
+        "An error occurred, please try again" + (error as Error).message,
+      );
+    }
+  }
 }
 
 export default PaintingsMongooseRepository;
