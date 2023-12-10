@@ -19,4 +19,10 @@ export type PaintingRequestWithoutId = Request<
   PaintingStructureWithoutId
 >;
 
+export type PaintingRequestWithId = Request<
+  { paintingId: string },
+  Record<string, unknown>,
+  PaintingStructure
+>;
+
 export type PaintingRequestById = Request<{ paintingId: string }>;
