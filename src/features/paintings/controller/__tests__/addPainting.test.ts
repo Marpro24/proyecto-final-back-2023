@@ -27,6 +27,7 @@ describe("Given a PaintingsController addPainting method", () => {
       deletePainting: jest.fn(),
       addPainting: jest.fn().mockResolvedValue({ paintingMock }),
       getPaintingById: jest.fn(),
+      modifyPainting: jest.fn(),
     };
 
     test("Then it should call its status method with the status code 201", async () => {
@@ -59,6 +60,7 @@ describe("Given a PaintingsController addPainting method", () => {
         deletePainting: jest.fn(),
         addPainting: jest.fn().mockRejectedValue(undefined),
         getPaintingById: jest.fn(),
+        modifyPainting: jest.fn(),
       };
 
       const expectedError: Partial<CustomError> = {
