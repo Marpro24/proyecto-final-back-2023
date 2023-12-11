@@ -7,16 +7,23 @@
   },
   "item": [
     {
-      "name": "list",
+      "name": "painting",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"painting\": {\r\n        _id\r\n6564d0f8ab6e912be5400b17\r\nimage\r\n\"https://i.ibb.co/tQWdrpy/Jamel-Armand.webp\"\r\nname\r\n\"Jamel Armand\"\r\nprice\r\n\"3000\"\r\ntitle\r\n\"Untitled\"\r\nyear\r\n\"2015\"\r\nauthorInfo\r\n\"Jamel Armand is considered as one of the most exciting and energising …\"\r\nimageDescription\r\n\"Jamel Armand’s paintings are an ode to the purity and aesthetics of fo…\"\r\n}}"
+        },
         "url": {
-          "raw": "http://localhost:5000/paintings",
+          "raw": "http://localhost:5000/paintings/6564d0f8ab6e912be5400b17",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
-          "path": ["paintings"]
+          "path": ["paintings", "6564d0f8ab6e912be5400b17"]
         }
       },
       "response": []
@@ -49,6 +56,14 @@
           "port": "5000",
           "path": ["paintings", "6564d129ab6e912be5400b1f"]
         }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH",
+      "request": {
+        "method": "PATCH",
+        "header": []
       },
       "response": []
     }
