@@ -10,4 +10,8 @@ export interface PaintingsRepository {
     painting: PaintingStructureWithoutId,
   ) => Promise<PaintingStructure>;
   getPaintingById: (paintingId: string) => Promise<PaintingStructure>;
+  modifyPainting: (
+    id: string,
+    painting: PaintingStructure,
+  ) => Promise<PaintingStructure | undefined>;
 }

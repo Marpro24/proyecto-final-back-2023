@@ -1,7 +1,10 @@
 import { type NextFunction, type Request, type Response } from "express";
 import { type PaintingsRepository } from "../repository/types";
 import CustomError from "../../../server/CustomError/CustomError.js";
-import { type PaintingRequestWithoutId } from "../types";
+import {
+  type PaintingRequestWithId,
+  type PaintingRequestWithoutId,
+} from "../types";
 
 class PaintingsController {
   constructor(private readonly paintingsRepository: PaintingsRepository) {}
@@ -62,6 +65,31 @@ class PaintingsController {
         await this.paintingsRepository.getPaintingById(paintingId);
 
       res.status(200).json({ painting });
+    } catch {
+      const customError = new CustomError(
+        "An error occurred, please try again",
+        400,
+      );
+
+      next(customError);
+    }
+  };
+
+  modifyPainting = async (
+    req: PaintingRequestWithId,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    try {
+      const painting = req.body;
+      const { paintingId } = req.params;
+
+      const modifiedPainting = await this.paintingsRepository.modifyPainting(
+        paintingId,
+        painting,
+      );
+
+      res.status(200).json({ painting: modifiedPainting });
     } catch {
       const customError = new CustomError(
         "An error occurred, please try again",

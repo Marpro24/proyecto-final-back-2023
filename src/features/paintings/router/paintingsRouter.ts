@@ -19,5 +19,6 @@ paintingsRouter.post(
   paintingsController.addPainting,
 );
 paintingsRouter.get("/:paintingId", paintingsController.getPaintingById);
+paintingsRouter.patch("/:paintingId", paintingsController.modifyPainting);
 
 export default paintingsRouter;
