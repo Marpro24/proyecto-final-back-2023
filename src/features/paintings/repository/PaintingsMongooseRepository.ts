@@ -7,7 +7,7 @@ import { type PaintingsRepository } from "./types";
 
 class PaintingsMongooseRepository implements PaintingsRepository {
   public async getPaintings(): Promise<PaintingStructure[]> {
-    const paintings = await Painting.find().limit(10);
+    const paintings = await Painting.find().limit(7).sort({ _id: -1 });
 
     return paintings;
   }
